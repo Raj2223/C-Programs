@@ -71,21 +71,48 @@ void selectSort(int arr[], int n)
     cout << endl;
 }
 
-int main()
+void insertArray(int arr[], int n)
 {
-    int arr[100];
-    int i, n;
 
     cout << "Enter number of elements\n";
     cin >> n;
     cout << "Enter " << n << " numbers \n";
 
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         cin >> arr[i];
+}
 
-    insertionSort(arr, n);
-    bubbleSort(arr, n);
-    selectSort(arr, n);
+int main()
+{
+    int arr[100];
+    int n;
+
+    int choice;
+
+    cout << "1. Insertion sort\n2. Bubble sort\n3. Selection sort\n";
+    cin >> choice;
+
+    switch (choice)
+    {
+    case 1:
+        insertArray(arr, n);
+        insertionSort(arr, n);
+        break;
+
+    case 2:
+        insertArray(arr, n);
+        bubbleSort(arr, n);
+        break;
+
+    case 3:
+        insertArray(arr, n);
+        selectSort(arr, n);
+        break;
+
+    default:
+        cout << "Invalid choice!!";
+        break;
+    }
 
     return 0;
 }
