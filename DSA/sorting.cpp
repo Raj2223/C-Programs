@@ -17,7 +17,7 @@ void insertionSort(int arr[], int n)
         arr[j + 1] = key;
     }
 
-    cout << "Sorted array using Insertion sort: \n";
+    cout << "\nSorted array using Insertion sort: \n";
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
     cout << endl;
@@ -35,7 +35,7 @@ void bubbleSort(int arr[], int n)
                 arr[j + 1] = swap;
             }
 
-    cout << "Sorted array using Bubble sort: \n";
+    cout << "\nSorted array using Bubble sort: \n";
 
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
@@ -63,7 +63,7 @@ void selectSort(int arr[], int n)
         }
     }
 
-    cout << "Sorted array using Selection sort: \n";
+    cout << "\nSorted array using Selection sort: \n";
 
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
@@ -71,15 +71,22 @@ void selectSort(int arr[], int n)
     cout << endl;
 }
 
-void insertArray(int arr[], int n)
+int insertArray(int arr[], int n)
 {
 
-    cout << "Enter number of elements\n";
-    cin >> n;
-    cout << "Enter " << n << " numbers \n";
+	int value;
+	cout<<"Enter no of Elements : ";
+	cin>>n;
 
-    for (int i = 0; i < n; i++)
-        cin >> arr[i];
+	cout<<"Enter array Elements. \n";
+	for(int i=0;i<n;i++)
+	{
+		cout<<"Index ["<<i<<"] : ";
+		cin>>value;
+		arr[i] = value;
+	}
+
+	return n;
 }
 
 int main()
@@ -87,25 +94,23 @@ int main()
     int arr[100];
     int n;
 
-    int choice;
+	n = insertArray(arr, n);
+    int choice;	
 
-    cout << "1. Insertion sort\n2. Bubble sort\n3. Selection sort\n";
+    cout << "\n--- Sorting Methods --- \n1. Insertion sort\n2. Bubble sort\n3. Selection sort \nEnter choice : ";
     cin >> choice;
 
     switch (choice)
     {
     case 1:
-        insertArray(arr, n);
         insertionSort(arr, n);
         break;
 
     case 2:
-        insertArray(arr, n);
         bubbleSort(arr, n);
         break;
 
     case 3:
-        insertArray(arr, n);
         selectSort(arr, n);
         break;
 
